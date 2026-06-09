@@ -20,8 +20,9 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          tinytex: true
+
+      - name: Set up TinyTeX
+        uses: r-lib/actions/setup-tinytex@v2
 
       - name: Install Georgia (for the division/department line)
         run: |
@@ -32,9 +33,7 @@ jobs:
           sudo fc-cache -f
 
       - name: Install LaTeX packages for the XeLaTeX format
-        run: |
-          tlmgr update --self
-          tlmgr install tex-gyre fontspec fancyhdr ragged2e euenc xcolor geometry
+        run: tlmgr install tex-gyre fontspec fancyhdr ragged2e euenc xcolor geometry
 
       - name: Run smoke tests (XeLaTeX + Typst)
         run: bash scripts/smoke-test.sh
