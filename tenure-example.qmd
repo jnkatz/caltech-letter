@@ -1,0 +1,26 @@
+---
+format: caltech-letter-pdf
+re: "Promotion of Dr. Alex Q. Researcher to Full Professor"
+date: "June 8, 2026"
+recipient: "Professor Dana Lee, Chair"
+recipient-address:
+  - "Department of Political Science"
+  - "University of Somewhere"
+  - "Somewhere, ST 00000"
+salutation: "Dear Professor Lee:"
+---
+
+Thank you for inviting me to evaluate Dr. Alex Researcher's case for
+promotion to Full Professor. I am pleased to do so. I have followed
+Dr. Researcher's work closely for more than a decade, and I can state
+without reservation that they are among the strongest scholars of their
+generation in our field.
+
+This second example exercises the addressed-recipient block (the
+`recipient` and `recipient-address` fields), which is typical of
+external tenure-and-promotion letters, in contrast to the
+search-committee form in `example.qmd`.
+
+In my assessment, Dr. Researcher easily clears the bar for promotion at
+any peer institution, and I recommend the case in the strongest possible
+terms.

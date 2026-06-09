@@ -1,0 +1,43 @@
+---
+format: caltech-letter-pdf
+re: "Jordan A. Doe"
+date: "October 20, 2025"
+salutation: "Dear Members of the Search Committee:"
+---
+
+It is my pleasure to write this letter on behalf of Jordan Doe, who is
+applying for a position in your department. Jordan is a Ph.D. candidate
+in the Social Science program at Caltech and is on track to complete
+the doctorate by the end of this academic year. I have known Jordan
+since they entered the program and have taught them in several courses.
+I am confident that Jordan is one of the strongest candidates on the
+market this year, and I recommend them to you in the strongest possible
+terms.
+
+Jordan's research lies at the intersection of law, economics, and
+political science. The work combines sophisticated causal inference and
+applied statistics with important substantive questions about housing
+law, eviction, and the operation of courts. The job market paper
+exemplifies this integration: the data are newly assembled, the causal
+identification strategy is clean, and the discussion of mechanisms is
+nuanced and compelling.
+
+The broader dissertation expands this research agenda in several
+important directions, using a regression discontinuity design to test
+whether court-drawn district boundaries create local inequities in
+access to justice. In a related methodological paper, Jordan develops
+robust approaches to RD estimation when the standard smoothness
+assumptions may not hold.
+
+Beyond the technical contributions, Jordan is an exceptional teacher and
+a generous colleague. They have served as a teaching assistant for our
+graduate sequence in quantitative methods, where students consistently
+rate them among the best instructors they have had. Jordan also
+organizes our applied statistics reading group and has mentored several
+junior students through their first research projects.
+
+In short, Jordan combines technical depth, substantive importance, and
+genuine collegiality in a way that is rare among candidates at this
+stage. I expect Jordan to become a leader in the field, and I recommend
+them without reservation. Please do not hesitate to contact me if I can
+provide any further information.

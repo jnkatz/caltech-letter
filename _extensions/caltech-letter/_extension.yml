@@ -1,0 +1,30 @@
+title: Caltech Letter
+author: Jonathan N. Katz
+version: 0.1.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    common:
+      date-format: "MMMM D, YYYY"
+      filters:
+        - logo-path.lua
+    pdf:
+      pdf-engine: xelatex
+      fontsize: 11pt
+      geometry:
+        - margin=1in
+        - top=0.9in
+      colorlinks: false
+      include-in-header:
+        - header.tex
+      template-partials:
+        - partials/title.tex
+        - partials/before-body.tex
+        - partials/after-body.tex
+    typst:
+      fontsize: 11pt
+      font-paths:
+        - _extensions/caltech-letter/fonts
+      template-partials:
+        - typst-template.typ
+        - typst-show.typ

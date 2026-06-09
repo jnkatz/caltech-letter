@@ -1,0 +1,20 @@
+---
+format: caltech-letter-pdf
+footer-contact: true
+re: "Jordan A. Doe"
+date: "October 20, 2025"
+salutation: "Dear Members of the Search Committee:"
+---
+
+This letter uses the official Caltech footer layout (`footer-contact:
+true`): the top of the page carries only the Caltech logo paired with
+the division name, and the sender's contact details move to a centered
+block at the foot of every page.
+
+It is otherwise identical to the default layout. Use whichever layout you
+prefer — the default places the full sender block in the top-right corner,
+matching the established Pages letterhead, while this option follows the
+Caltech Identity Toolkit's standard letterhead template.
+
+I recommend Jordan without reservation and would be glad to provide any
+further information.

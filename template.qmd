@@ -1,0 +1,19 @@
+---
+format: caltech-letter-pdf
+re: "Subject of the letter"
+date: today
+# salutation defaults to "Dear Members of the Search Committee:"
+# The sender block (name, title, address, phone, email) and the
+# "Division of the Humanities and Social Sciences" line default to
+# Jonathan N. Katz's. Override any field in this front matter, e.g.:
+#   salutation: "Dear Professor Smith:"
+#   closing: "Best regards,"
+# For Caltech's official footer layout (contact block at the foot, top
+#   shows only logo + division), add:  footer-contact: true
+# Switch engines by changing the format to caltech-letter-typst.
+---
+
+Write the body of the letter here. Paragraphs are separated by a blank
+line, exactly as in any Markdown document. The letterhead, date, RE
+line, salutation, and closing/signature block are all generated for
+you from the front matter above.
