@@ -13,7 +13,7 @@ contributes:
       fontsize: 11pt
       geometry:
         - margin=1in
-        - top=0.9in
+        - top=1.05in
       colorlinks: false
       include-in-header:
         - header.tex
@@ -24,7 +24,7 @@ contributes:
     typst:
       fontsize: 11pt
       font-paths:
-        - _extensions/caltech-letter/fonts
+        - /_extensions/caltech-letter/fonts
       template-partials:
         - typst-template.typ
         - typst-show.typ

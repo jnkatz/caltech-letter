@@ -5,6 +5,7 @@
 // Official Caltech palette: orange PMS 1585c, neutral PMS Cool Gray 9.
 #let caltech-orange = rgb("#FF6C0C")
 #let caltech-gray = rgb("#76777B")
+#let today = datetime.today().display("[month repr:long] [day padding:none], [year]")
 
 #let letter(
   sender-name: [Jonathan N. Katz],
@@ -15,7 +16,7 @@
   department: [Division of the Humanities and Social Sciences],
   logo: "/_extensions/caltech-letter/caltech-logo-orange.svg",
   re: none,
-  date: none,
+  date: today,
   recipient: none,
   recipient-address: (),
   salutation: [Dear Members of the Search Committee:],
@@ -24,7 +25,7 @@
   signature-title: none,
   footer-contact: false,
   fontsize: 11pt,
-  margin: (x: 1in, top: 0.9in, bottom: 1in),
+  margin: (x: 1in, top: 1.05in, bottom: 1in),
   doc,
 ) = {
   set text(font: "TeX Gyre Heros", size: fontsize)
@@ -83,31 +84,33 @@
     )
   }
 
-  v(2.2em)
+  v(0.8em)
   align(right)[#date]
-  v(1.4em)
+  v(0.7em)
 
   if re != none {
     text(weight: "bold")[RE: #re]
-    v(1.2em)
+    v(0.8em)
   }
   if recipient != none {
     recipient
     linebreak()
     for line in recipient-address { line; linebreak() }
-    v(1.2em)
+    v(0.8em)
   }
   salutation
-  v(0.6em)
+  v(0.3em)
 
   // --- Body ---
   doc
 
   // --- Closing / signature ---
-  v(1.5em)
-  closing
-  v(3.2em)
-  if signature-name != none { signature-name } else { sender-name }
-  linebreak()
-  if signature-title != none { signature-title } else { sender-title }
+  block(breakable: false)[
+    #v(1.5em)
+    #closing
+    #v(3.2em)
+    #if signature-name != none { signature-name } else { sender-name }
+    #linebreak()
+    #if signature-title != none { signature-title } else { sender-title }
+  ]
 }

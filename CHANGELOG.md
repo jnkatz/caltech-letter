@@ -1,5 +1,21 @@
 # Changelog
 
+## Unreleased
+
+- Fixed Typst font resolution for letters rendered from subdirectories by
+  making the bundled TeX Gyre Heros font path project-root-relative.
+- Made omitted dates behave consistently across engines: Typst now shows
+  today's date by default, and LaTeX continuation headers include the
+  default date when no `date` field is supplied.
+- Kept closing/signature blocks together in both engines so the closing
+  phrase is not orphaned from the typed signature across a page break.
+- Tuned first-page spacing and the LaTeX sender block width to better
+  match the Pages reference letterhead and avoid wrapping the default
+  sender title.
+- Corrected the README's Caltech orange value to `#FF6C0C`.
+- Expanded the smoke test to cover no-date letters, subdirectory renders,
+  and a long letter that exercises closing/signature pagination.
+
 ## 0.1.0
 
 Initial release.

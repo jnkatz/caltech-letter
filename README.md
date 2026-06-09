@@ -17,7 +17,7 @@ It renders to PDF through two engines:
 
 This is the letter companion to
 [`jnkatz/caltech-revealjs`](https://github.com/jnkatz/caltech-revealjs)
-and shares its visual identity (orange `#FF6A14`).
+and shares its visual identity (orange `#FF6C0C`).
 
 ## Installation
 

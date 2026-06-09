@@ -1,5 +1,7 @@
 $-- caltech-letter: closing + signature block, drawn after the body.
+\par\noindent\begin{minipage}{\textwidth}
 \vspace{1.5\baselineskip}
 $if(closing)$$closing$$else$Sincerely,$endif$\\[3.2\baselineskip]
 $if(signature-name)$$signature-name$$else$$if(sender-name)$$sender-name$$else$Jonathan N. Katz$endif$$endif$\\
 $if(signature-title)$$signature-title$$else$$if(sender-title)$$sender-title$$else$Kay Sugahara Professor of Social Sciences and Statistics$endif$$endif$
+\end{minipage}

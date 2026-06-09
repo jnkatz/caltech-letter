@@ -95,8 +95,9 @@ quarto render example.qmd --to caltech-letter-pdf
 quarto render example.qmd --to caltech-letter-typst
 
 # Clean-room check: `quarto add` into a temp project, render every sample
-# to BOTH engines (8 renders). This is the authoritative test — it
-# exercises logo/font path resolution from a fresh install.
+# and edge-case smoke letter to BOTH engines. This is the authoritative
+# test — it exercises logo/font path resolution from a fresh install,
+# no-date defaults, subdirectory renders, and closing/signature pagination.
 bash scripts/smoke-test.sh
 ```
 
@@ -114,9 +115,10 @@ Requirements: Quarto ≥ 1.4, XeLaTeX with `tex-gyre`/`fontspec`/`fancyhdr`/
 
 ## Known limitations / worth scrutinizing
 
-- **Path assumptions**: the Typst `font-paths` and root-relative logo path
-  assume rendering from the project root (the `.qmd` at the repo top
-  level). Letters in subdirectories may not resolve the logo/fonts.
+- **Path assumptions**: Typst uses project-root-relative paths for the
+  bundled fonts and logo. This works for letters in subdirectories when
+  rendered inside a Quarto project; ad hoc subdirectory renders outside a
+  project root may still fail to locate the installed extension.
 - **Georgia dependency**: XeLaTeX hard-errors if Georgia is absent; Typst
   falls back silently. No graceful fallback is configured.
 - **`footer-contact` boolean**: relies on Pandoc/Quarto truthiness of the

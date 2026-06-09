@@ -12,12 +12,12 @@ $-- contact block moves to the page footer (filled below).
 $else$
 $-- Default layout: logo + division (left), full sender block (top-right).
 \noindent
-\begin{minipage}[t]{0.52\textwidth}
+\begin{minipage}[t]{0.43\textwidth}
   \vspace{0pt}
   \includegraphics[height=0.55in]{$logo-path$}\\[6pt]
-  {\divisionfont\footnotesize\color{caltechgray}$if(department)$$department$$else$Division of the Humanities and Social Sciences$endif$}
+  \makebox[0pt][l]{\divisionfont\footnotesize\color{caltechgray}$if(department)$$department$$else$Division of the Humanities and Social Sciences$endif$}
 \end{minipage}\hfill
-\begin{minipage}[t]{0.44\textwidth}
+\begin{minipage}[t]{0.53\textwidth}
   \vspace{0pt}
   \RaggedLeft\footnotesize
   $if(sender-name)$$sender-name$$else$Jonathan N. Katz$endif$\\
@@ -28,18 +28,18 @@ $-- Default layout: logo + division (left), full sender block (top-right).
 \end{minipage}
 $endif$
 
-\vspace{2.2\baselineskip}
+\vspace{0.8\baselineskip}
 {\RaggedLeft $if(date)$$date$$else$\today$endif$\par}
 
-\vspace{1.4\baselineskip}
-$if(re)$\textbf{RE: $re$}\par\vspace{1.2\baselineskip}$endif$
+\vspace{0.7\baselineskip}
+$if(re)$\textbf{RE: $re$}\par\vspace{0.8\baselineskip}$endif$
 $if(recipient)$$recipient$\\
 $for(recipient-address)$$recipient-address$\\
-$endfor$\par\vspace{1.2\baselineskip}$endif$
+$endfor$\par\vspace{0.8\baselineskip}$endif$
 $if(salutation)$$salutation$$else$Dear Members of the Search Committee:$endif$\par
 
 $-- Fill the page-2+ running header from metadata.
-\renewcommand{\contheadleft}{$if(re)$RE: $re$$else$$if(recipient)$$recipient$$endif$$endif$\hspace{2em}$if(date)$$date$$endif$}
+\renewcommand{\contheadleft}{$if(re)$RE: $re$$else$$if(recipient)$$recipient$$endif$$endif$\hspace{2em}$if(date)$$date$$else$\today$endif$}
 $-- In footer layout, fill the centered contact block at the foot of every page.
 $if(footer-contact)$
 \renewcommand{\contactfooter}{%
@@ -47,4 +47,4 @@ $if(footer-contact)$
   {\divisionfont $if(department)$$department$$else$Division of the Humanities and Social Sciences$endif$}\\[1pt]
   $if(sender-address)$$for(sender-address)$$sender-address$$sep$ \textperiodcentered{} $endfor$$else$1200 East California Blvd. \textperiodcentered{} MC 228-77 \textperiodcentered{} Pasadena, CA 91125$endif$ \textperiodcentered{} $if(sender-phone)$$sender-phone$$else$(626) 395-4191$endif$ \textperiodcentered{} $if(sender-email)$$sender-email$$else$jkatz@caltech.edu$endif$}
 $endif$
-\vspace{0.2\baselineskip}
+\vspace{0.1\baselineskip}
