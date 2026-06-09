@@ -128,7 +128,13 @@ Requirements: Quarto ≥ 1.4, XeLaTeX with `tex-gyre`/`fontspec`/`fancyhdr`/
   sibling hit cross-version partial issues; this uses the standard
   `before-body`/`after-body`/`title` partials, which are stable).
 - **Cross-engine parity**: line breaks and vertical spacing differ
-  slightly between XeLaTeX and Typst metrics.
+  slightly between XeLaTeX and Typst metrics. A long `department`
+  override also diverges — it wraps to two lines in Typst (the grid's
+  `1fr` column wraps) but stays on one line in LaTeX (the division name is
+  set in a zero-width `\makebox` that overflows rightward). The default
+  department is short enough to render identically (one line) in both, and
+  realistic names do not overlap the sender block; only a pathologically
+  long override would.
 
 ## Conventions
 
