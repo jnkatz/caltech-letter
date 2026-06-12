@@ -25,8 +25,9 @@ and shares its visual identity (orange `#FF6C0C`).
 quarto add jnkatz/caltech-letter
 ```
 
-This installs the extension into `_extensions/caltech-letter/` in your
-project.
+This installs the extension into `_extensions/jnkatz/caltech-letter/`
+in your project. A local development checkout may instead use
+`_extensions/caltech-letter/`; both layouts are supported.
 
 ## Usage
 

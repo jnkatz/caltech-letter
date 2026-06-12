@@ -1,6 +1,6 @@
 title: Caltech Letter
 author: Jonathan N. Katz
-version: 0.1.0
+version: 0.1.1
 quarto-required: ">=1.4.0"
 contributes:
   formats:
@@ -25,6 +25,7 @@ contributes:
       fontsize: 11pt
       font-paths:
         - /_extensions/caltech-letter/fonts
+        - /_extensions/jnkatz/caltech-letter/fonts
       template-partials:
         - typst-template.typ
         - typst-show.typ

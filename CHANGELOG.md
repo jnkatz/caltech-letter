@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.1
+
+Fixes the GitHub-namespaced install layout for the Typst format
+(found in the sibling `caltech-memo` extension's review and ported
+here).
+
+- `quarto add jnkatz/caltech-letter` installs to
+  `_extensions/jnkatz/caltech-letter/`, where the Typst format's
+  hard-coded logo path failed the render outright and the bundled
+  TeX Gyre Heros fonts silently fell back to a substitute. The logo
+  is now resolved by `logo-path.lua` for both engines (injected as a
+  raw Typst string so Pandoc does not escape `_extensions`), and
+  `font-paths` covers both install layouts.
+- The Typst template asserts the logo path was injected: a letter
+  without the wordmark is a loud error, not a degraded render.
+- The smoke test now runs in both install layouts and asserts with
+  `pdffonts` that TeX Gyre Heros is actually embedded in the Typst
+  PDFs (render success and text checks cannot catch silent font
+  substitution). CI installs `poppler-utils` for this.
+
 ## 0.1.0
 
 Initial release.

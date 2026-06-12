@@ -14,7 +14,7 @@
   sender-phone: [(626) 395-4191],
   sender-email: [jkatz\@caltech.edu],
   department: [Division of the Humanities and Social Sciences],
-  logo: "/_extensions/caltech-letter/caltech-logo-orange.svg",
+  logo: none,
   re: none,
   date: today,
   recipient: none,
@@ -30,6 +30,13 @@
 ) = {
   set text(font: "TeX Gyre Heros", size: fontsize)
   set par(justify: false, leading: 0.65em, spacing: 0.9em, first-line-indent: 0pt)
+
+  // A missing logo is a branding bug, not a degraded mode: fail loudly
+  // rather than render a letter without the wordmark.
+  assert(
+    logo != none,
+    message: "caltech-letter: logo not resolved — logo-path.lua should inject typst-logo-path",
+  )
 
   set page(
     paper: "us-letter",

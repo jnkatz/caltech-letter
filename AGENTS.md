@@ -66,12 +66,17 @@ defaults (Typst), so a document only needs `re:` and a body.
 
 - **Logo**: official vector wordmark, `caltech-logo-orange.pdf` (XeLaTeX
   embeds vector PDF) and `caltech-logo-orange.svg` (Typst can embed only
-  SVG/raster, not EPS/PDF). `logo-path.lua` resolves the PDF for LaTeX via
-  `quarto.utils.resolve_path`. For Typst the path is a literal in the
-  function default, **not** routed through metadata, for two reasons
-  (both verified): Pandoc's Typst writer escapes underscores
-  (`\_extensions`) and corrupts the path, and Typst resolves a leading
-  `/` against the project root, not the filesystem root.
+  SVG/raster, not EPS/PDF). `logo-path.lua` resolves both via
+  `quarto.utils.resolve_path`, so either install layout works
+  (`_extensions/caltech-letter/` locally, the GitHub-namespaced
+  `_extensions/jnkatz/caltech-letter/`). For Typst the resolved path is
+  truncated to its root-relative `/_extensions/...` suffix (Typst
+  resolves a leading `/` against the project root, not the filesystem
+  root) and injected as a **raw Typst string** (`typst-logo-path`),
+  because Pandoc's Typst writer escapes underscores (`\_extensions`)
+  and corrupts paths routed through ordinary metadata. The template's
+  `logo` default is `none` with an `assert`, so a failed injection is a
+  loud error, not a silently logo-less letter.
 - **Body font** TeX Gyre Heros: found by filename via kpathsea for
   XeLaTeX (the `tex-gyre` TeX Live package), and bundled in `fonts/` for
   Typst (which can't read the TeX tree). Set via `font-paths` in
@@ -94,10 +99,12 @@ Typst via a conditional `footer:` and header band.
 quarto render example.qmd --to caltech-letter-pdf
 quarto render example.qmd --to caltech-letter-typst
 
-# Clean-room check: `quarto add` into a temp project, render every sample
-# and edge-case smoke letter to BOTH engines. This is the authoritative
+# Clean-room check: render every sample and edge-case smoke letter to BOTH
+# engines in BOTH install layouts (local `quarto add` and the GitHub-
+# namespaced _extensions/jnkatz/caltech-letter). This is the authoritative
 # test — it exercises logo/font path resolution from a fresh install,
-# no-date defaults, subdirectory renders, and closing/signature pagination.
+# no-date defaults, subdirectory renders, closing/signature pagination,
+# and font embedding (pdffonts — Typst substitutes missing fonts silently).
 bash scripts/smoke-test.sh
 ```
 
@@ -119,6 +126,12 @@ Requirements: Quarto ≥ 1.4, XeLaTeX with `tex-gyre`/`fontspec`/`fancyhdr`/
   bundled fonts and logo. This works for letters in subdirectories when
   rendered inside a Quarto project; ad hoc subdirectory renders outside a
   project root may still fail to locate the installed extension.
+- **Fork installs get silent font fallback in Typst**: `font-paths`
+  enumerates exactly two layouts (`/_extensions/caltech-letter/fonts`
+  and `/_extensions/jnkatz/caltech-letter/fonts`). An install under a
+  different GitHub owner resolves the logo (Lua-injected) but not the
+  bundled Heros fonts, and Typst substitutes silently. The smoke test's
+  `pdffonts` assertions catch this when run; renders do not.
 - **Georgia dependency**: XeLaTeX hard-errors if Georgia is absent; Typst
   falls back silently. No graceful fallback is configured.
 - **`footer-contact` boolean**: relies on Pandoc/Quarto truthiness of the

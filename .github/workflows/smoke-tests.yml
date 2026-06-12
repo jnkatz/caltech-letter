@@ -24,12 +24,12 @@ jobs:
       - name: Set up TinyTeX
         uses: r-lib/actions/setup-tinytex@v2
 
-      - name: Install Georgia (for the division/department line)
+      - name: Install Georgia and poppler (pdffonts assertions)
         run: |
           echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" \
             | sudo debconf-set-selections
           sudo apt-get update
-          sudo apt-get install -y ttf-mscorefonts-installer
+          sudo apt-get install -y ttf-mscorefonts-installer poppler-utils
           sudo fc-cache -f
 
       - name: Install LaTeX packages for the XeLaTeX format

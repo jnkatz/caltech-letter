@@ -1,6 +1,9 @@
 // caltech-letter: forward Pandoc metadata into the `letter` function defined
 // in typst-template.typ. Any field omitted falls back to the function default.
 #show: doc => letter(
+$if(typst-logo-path)$
+  logo: $typst-logo-path$,
+$endif$
 $if(re)$
   re: [$re$],
 $endif$
