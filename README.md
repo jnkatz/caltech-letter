@@ -1,5 +1,7 @@
 # Caltech Letter
 
+[![Smoke Tests](https://github.com/jnkatz/caltech-letter/actions/workflows/smoke-tests.yml/badge.svg)](https://github.com/jnkatz/caltech-letter/actions/workflows/smoke-tests.yml)
+
 A [Quarto](https://quarto.org/) format extension for formal letters —
 recommendations, external tenure-and-promotion reviews, and general
 correspondence — on Caltech letterhead. It reproduces the Pages
