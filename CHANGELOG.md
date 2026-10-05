@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- The typed title under the signature is omitted by default; the
+  letterhead already gives the sender title. Set `signature-title` to
+  restore it.
+- New `signature-image` field draws a signature image in the
+  signature space.
+
 ## 0.1.1
 
 Fixes the GitHub-namespaced install layout for the Typst format

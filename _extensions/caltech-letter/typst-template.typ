@@ -23,6 +23,7 @@
   closing: [Sincerely,],
   signature-name: none,
   signature-title: none,
+  signature-image: none,
   footer-contact: false,
   fontsize: 11pt,
   margin: (x: 1in, top: 1.05in, bottom: 1in),
@@ -115,9 +116,16 @@
   block(breakable: false)[
     #v(1.5em)
     #closing
-    #v(3.2em)
+    #if signature-image != none {
+      v(0.2em)
+      image(signature-image, height: 2.6em)
+      v(0.1em)
+    } else {
+      v(3.2em)
+    }
     #if signature-name != none { signature-name } else { sender-name }
-    #linebreak()
-    #if signature-title != none { signature-title } else { sender-title }
+    // The typed title is omitted unless signature-title is set: the
+    // sender title already appears in the letterhead.
+    #if signature-title != none { linebreak(); signature-title }
   ]
 }

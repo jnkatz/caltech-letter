@@ -46,6 +46,9 @@ $endif$
 $if(signature-title)$
   signature-title: [$signature-title$],
 $endif$
+$if(signature-image)$
+  signature-image: "$signature-image$",
+$endif$
 $if(footer-contact)$
   footer-contact: true,
 $endif$

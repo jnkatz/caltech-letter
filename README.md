@@ -92,7 +92,8 @@ Every field is optional; omitted fields fall back to the defaults shown.
 | `recipient-address` | *(none)* | List of recipient address lines. |
 | `closing` | Sincerely, | Closing word/phrase. |
 | `signature-name` | = `sender-name` | Typed name under the signature space. |
-| `signature-title` | = `sender-title` | Typed title under the name. |
+| `signature-title` | *(none)* | Typed title under the name. Omitted by default because the letterhead already gives the sender title. |
+| `signature-image` | *(none)* | Path to a signature image (PDF or PNG, relative to the document or absolute) drawn in the signature space. Keep it outside this repository. |
 | `sender-name` | Jonathan N. Katz | Top-right block, line 1. |
 | `sender-title` | Kay Sugahara Professor… | Top-right block, line 2. |
 | `sender-address` | 1200 East California Blvd. / MC 228-77 / Pasadena, CA 91125 | List of address lines. |
